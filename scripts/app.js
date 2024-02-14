@@ -1,4 +1,5 @@
 import { FetchData } from "./fetchApi.js"
+
 let sortIdBtn = document.getElementById("sortIdBtn")
 let sortFirstBtn = document.getElementById("sortFirstBtn")
 let sortLastBtn = document.getElementById("sortLastBtn")
