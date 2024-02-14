@@ -1,3 +1,4 @@
+import { FetchData } from "./fetchApi.js"
 let sortIdBtn = document.getElementById("sortIdBtn")
 let sortFirstBtn = document.getElementById("sortFirstBtn")
 let sortLastBtn = document.getElementById("sortLastBtn")
@@ -28,12 +29,6 @@ let peoplePage = 10;
 let currentPage = 1;
 let totalPages = 10;
 let peopleData;
-
-const FetchData = async () => {
-    const promise = await fetch("./data/data.json");
-    const data = await promise.json();
-    peopleData = data.People;
-}
 
 const CreatingTable = async (peoplePage) => {
     loadListOfPeople.innerHTML = "";
@@ -302,7 +297,7 @@ nextBtn.addEventListener("click", () => {
 });
 
 window.onload = async () => {
-    await FetchData();
+    peopleData = await FetchData();
     CreatingTable(peoplePage);
 }
 
